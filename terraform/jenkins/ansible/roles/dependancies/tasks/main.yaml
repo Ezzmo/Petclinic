@@ -1,0 +1,15 @@
+- name: install nodeJs
+  apt: name=nodejs state=latest
+  become: yes
+
+- name: install npm
+  apt: name=npm state=latest
+  become: true
+
+- name: install angular
+  command: npm install -g @angular/cli@latest
+  become: true
+
+- name: install Karma
+  command: npm install -g karma
+  become: yes
