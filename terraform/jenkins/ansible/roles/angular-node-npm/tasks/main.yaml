@@ -1,15 +1,23 @@
 - name: install nodeJs
-  apt: name=nodejs state=latest
-  become: yes
+  become: true
+  apt: 
+    name: nodejs 
+    state: latest
+    update_cache: true
 
 - name: install npm
-  apt: name=npm state=latest
   become: true
+  apt: 
+    name: npm 
+    state: latest
 
+  
 - name: install angular
   command: npm install -g @angular/cli@latest
   become: true
 
+  
 - name: install Karma
   command: npm install -g karma
-  become: yes
+  become: true
+  update_cache: true
