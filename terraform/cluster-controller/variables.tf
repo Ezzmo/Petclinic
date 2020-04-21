@@ -1,6 +1,6 @@
 
 variable "admin_password" {
-  default = "Password1234!"
+  default = ""
 
 }
 

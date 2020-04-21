@@ -6,13 +6,13 @@ provider "azurerm" {
 
 #create resource group
 resource "azurerm_resource_group" "main" {
-  name     = "${terraform.workspace}-resources"
+  name     = "myvmuk"
   location = "Uk South"
 }
 
 #create virtual network
 resource "azurerm_virtual_network" "main" {
-  name                = "${terraform.workspace}-network"
+  name                = "kube-network"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
@@ -28,7 +28,7 @@ resource "azurerm_subnet" "internal" {
 
 #create public IP
 resource "azurerm_public_ip" "main" {
-  name                = "${terraform.workspace}-publicIp"
+  name                = "kube-publicIp"
   location            = "Uk South"
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
@@ -37,7 +37,7 @@ resource "azurerm_public_ip" "main" {
 
 #create NIC
 resource "azurerm_network_interface" "main" {
-  name                = "${terraform.workspace}-nic"
+  name                = "kube-nic"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 
@@ -51,7 +51,7 @@ resource "azurerm_network_interface" "main" {
 
 #Create VM
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${terraform.workspace}-vm"
+  name                  = "kube-vm"
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.main.id]
