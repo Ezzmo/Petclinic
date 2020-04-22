@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "main" {
 
 #create virtual network
 resource "azurerm_virtual_network" "main" {
-  name                = "jenkins-network"
+  name                = "jenkins-resources-vnet"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
@@ -28,7 +28,7 @@ resource "azurerm_subnet" "internal" {
 
 #create public IP
 resource "azurerm_public_ip" "main" {
-  name                = "jenkins-publicIp"
+  name                = "jenkins-vm-ip"
   location            = "East US 2"
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
@@ -37,7 +37,7 @@ resource "azurerm_public_ip" "main" {
 
 #create NIC
 resource "azurerm_network_interface" "main" {
-  name                = "jenkins-nic"
+  name                = "jenkins-vm-nic"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 
@@ -51,7 +51,7 @@ resource "azurerm_network_interface" "main" {
 
 resource "azurerm_network_security_group" "main" {
 
-  name                = "jenkins-nsg"
+  name                = "jenkins-vm-nsg"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 
@@ -96,7 +96,7 @@ resource "azurerm_virtual_machine" "main" {
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.main.id]
-  vm_size               = "Standard_DS2_v3"
+  vm_size               = "Standard_D2s_v3"
 
   storage_image_reference {
     publisher = "Canonical"
@@ -105,7 +105,7 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "myosdisk1"
+    name              = "jenkins-vm_disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
