@@ -5,7 +5,11 @@
 ansible_user=mizan
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/id_rsa
-[nginx:vars]
+
+[kubecontrol]
+40.121.80.161
+
+[kubecontrol:vars]
 ansible_user=mizan
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/id_rsa

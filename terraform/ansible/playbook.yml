@@ -19,3 +19,18 @@
   tasks:
   - name: Installing SSHPASS  
     command: sudo apt-get install sshpass
+
+- hosts: kubecontrol
+  become: true
+  roles:
+    - git
+    - angular-node-npm
+  tasks:
+  - name: Installing Docker and compose
+    command: "{{item}}"
+    with_items:
+     - curl https://get.docker.com | sudo bash
+     - sudo usermod -aG docker mizan
+     - version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+     - sudo curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+     - sudo chmod +x /usr/local/bin/docker-compose
