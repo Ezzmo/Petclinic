@@ -9,4 +9,4 @@ RUN npm install -g @angular/cli@latest
 COPY . /app
 # start app
 #CMD ["ng","serve","--host", "0.0.0.0"]
-CMD ng serve --host 0.0.0.0 --port 4200
+CMD ng serve --host 0.0.0.0 --port 4200 --disableHostCheck true
