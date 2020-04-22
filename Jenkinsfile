@@ -1,5 +1,4 @@
 pipeline{
-<<<<<<< HEAD
 
     agent any
     parameters {
@@ -14,85 +13,57 @@ pipeline{
     }
     stages{
         
-        stage('Testing'){
+        stage('Test'){
             when {
                 TEST true
             }
         }
 
-        stage('Build backend jar'){
+        stage('Build backend'){
             when {
                 BUILD true
             }
             steps{
                 sh label: '', script:
                 '''
+                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                git clone https://github.com/ezzmo/petclinic
                 cd spring-petclinic-backend
                 ./mvnw spring-boot:run
-                '''
-            }
-        }
-
-        stage('Build backend image'){
-            when {
-                BUILD true
-            }
-            steps{
-                sh label: '', script:
-                '''
+                docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
                 docker build -t docktermo/backend .
+                docker push docktermo/backend
                 '''
             }
         }
 
-        stage('Build frontend image'){
+        stage('Build frontend'){
             when {
                 BUILD true
             }
             steps{
                 sh label: '', script:
                 '''
+                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                git clone https://github.com/ezzmo/petclinic
                 cd spring-petclinic-frontend
+                ./mvnw spring-boot:run 
+                docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
                 docker build -t docktermo/frontend .
+                docker push docktermo/frontend
                 '''
             }
         }
-
-        stage('Push images'){
-            when {
-                BUILD true
-            }
+        stage('Deploy'){
             steps{
-                sh label: '',
+                sh label: '', script:
+                '''
+                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                git clone https://github.com/ezzmo/petclinic
+                cd petclinic
+                kubectl apply -f ./kubernetes_implementation/
+                '''
             }
         }
     }
 }
-=======
-        agent any
-
-	stages{
-	     
-	     stage('Testing Pet Clinic Application'){
-                steps{
-		    
-	            sh label: '', script: '''
-                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
-			
-		'''
-                }
-            } 	
-	    	
-            stage('Stack Deploy on Manager VM'){
-                steps{
-		    
-	            sh label: '', script: '''
-                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
-			
-			
-		'''
-                }
-            }
-        }    
-}
->>>>>>> 1e6109d0802f55a140d7f9fd99adcccb28c6c61b
