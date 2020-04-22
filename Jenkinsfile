@@ -7,7 +7,7 @@ pipeline{
                 steps{
 		    
 	            sh label: '', script: '''
-                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${vmuser}<<eof
+                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
 			
 		'''
                 }
@@ -17,7 +17,7 @@ pipeline{
                 steps{
 		    
 	            sh label: '', script: '''
-                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${vmuser}<<eof
+                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
 			
 			
 		'''
