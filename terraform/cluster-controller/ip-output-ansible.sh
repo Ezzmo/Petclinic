@@ -3,7 +3,7 @@
 
 echo " " >> ../ansible/inventory
 echo "[kubecontrol]" >> ../ansible/inventory
-echo $(terraform output kube_pub_ip) >> ansible/inventory
+echo $(terraform output kube_pub_ip) >> ../ansible/inventory
 
 echo " " >> ../ansible/inventory
 

@@ -6,8 +6,8 @@ provider "azurerm" {
 
 #create resource group
 resource "azurerm_resource_group" "main" {
-  name     = "myvmuk"
-  location = "Uk South"
+  name     = "kube-controller"
+  location = "eastus"
 }
 
 #create virtual network
@@ -29,7 +29,7 @@ resource "azurerm_subnet" "internal" {
 #create public IP
 resource "azurerm_public_ip" "main" {
   name                = "kube-publicIp"
-  location            = "Uk South"
+  location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
 
@@ -55,7 +55,7 @@ resource "azurerm_virtual_machine" "main" {
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.main.id]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_D2s_v3"
 
   storage_image_reference {
     publisher = "Canonical"
@@ -64,7 +64,7 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "myosdisk1"
+    name              = "kube-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"

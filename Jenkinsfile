@@ -1,4 +1,5 @@
 pipeline{
+<<<<<<< HEAD
 
     agent any
     parameters {
@@ -67,3 +68,31 @@ pipeline{
         }
     }
 }
+=======
+        agent any
+
+	stages{
+	     
+	     stage('Testing Pet Clinic Application'){
+                steps{
+		    
+	            sh label: '', script: '''
+                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+			
+		'''
+                }
+            } 	
+	    	
+            stage('Stack Deploy on Manager VM'){
+                steps{
+		    
+	            sh label: '', script: '''
+                        sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+			
+			
+		'''
+                }
+            }
+        }    
+}
+>>>>>>> 1e6109d0802f55a140d7f9fd99adcccb28c6c61b

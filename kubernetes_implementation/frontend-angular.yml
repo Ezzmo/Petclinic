@@ -9,7 +9,7 @@ spec:
   - protocol: TCP
     port: 4200
     targetPort: 4200
-  type: LoadBalancer
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,6 +29,6 @@ spec:
       hostname: frontend
       containers:
       - name: frontend
-        image: alimizan/spring-petclinic-angular-with-ip:latest
+        image: docktermo/frontend
         ports:
         - containerPort: 4200
