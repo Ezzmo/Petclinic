@@ -24,12 +24,12 @@
   become: true
   roles:
     - angular-node-npm
-#  tasks:
-#  - name: Installing Docker and compose
-#    command: "{{item}}"
-#    with_items:
-#     - curl https://get.docker.com | sudo bash
-#     - sudo usermod -aG docker mizan
-#     - version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
-#     - sudo curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-#     - sudo chmod +x /usr/local/bin/docker-compose
+  tasks:
+  - name: Installing Kubectl
+    command: "{{item}}"
+    with_items:
+     - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+     - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+     - sudo mv ./kubectl /usr/local/bin/kubectl
+     - chmod +x /usr/local/bin/kubectl
+     - az aks install-cli
