@@ -20,11 +20,10 @@
   - name: Installing SSHPASS  
     command: sudo apt-get install sshpass
 
-#- hosts: kubecontrol
-#  become: true
-#  roles:
-#    - git
-#    - angular-node-npm
+- hosts: kubecontrol
+  become: true
+  roles:
+    - angular-node-npm
 #  tasks:
 #  - name: Installing Docker and compose
 #    command: "{{item}}"
