@@ -1,4 +1,4 @@
-- name: install git and java
+- name: install git
   become: true
   shell: sudo apt install git
 

@@ -52,6 +52,9 @@
     "source-map-explorer": "^1.5.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.15.0",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "karma-phantomjs-launcher":"^1.0.4",
+    "phantomjs":"^2.1.7",
+    "phantomjs-prebuild":"^2.1.16"
   }
 }

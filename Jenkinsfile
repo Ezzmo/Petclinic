@@ -3,7 +3,7 @@ pipeline{
     agent any
     parameters {
         booleanParam (
-            defaultValue: false,
+            defaultValue: true,
             description: '',
             name: 'TEST')
         booleanParam (
@@ -13,9 +13,33 @@ pipeline{
     }
     stages{
         
-        stage('Test'){
+        stage('Test backend'){
             when {
                 TEST true
+            }
+            steps {
+                sh label: '', script:
+                '''
+                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                git clone https://github.com/ezzmo/petclinic
+                cd petclinic/spring-petclinic-backend
+                mvn test
+                '''
+            }
+        }
+        stage('Test frontend'){
+            when {
+                TEST true
+            }
+            steps {
+                sh label: '', script:
+                '''
+                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                git clone https://github.com/ezzmo/petclinic
+                cd petclinic/spring-petclinic-frontend
+                npm install
+                ng test --browsers PhantomJS
+                '''
             }
         }
 

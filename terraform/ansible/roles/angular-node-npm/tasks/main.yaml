@@ -3,7 +3,7 @@
   shell: sudo apt install nodejs-legacy
 
 - name: install angular
-  shell: npm install -g @angular/cli@latest
+  shell: npm install -g @angular/cli@8
   become: true
 
 - name: install Karma
