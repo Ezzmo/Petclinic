@@ -90,7 +90,7 @@ Terraform was used to create our deployment infrastructure as code, in this case
 
 We chose Terraform as it lets you write infrastructure as code, the infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can be sure that you are using the latest configurations which avoids environment drift.
 
-## Setup files can be found in the Terraform Folder
+# Setup files can be found in the Terraform Folder
 
 - Ansible
 
