@@ -85,11 +85,12 @@ User:
 
 <a name="Risk"></a>
 ## Risk Analysis
+![RiskAssessment](https://github.com/Ezzmo/Petclinic/blob/develop/Documentation/RiskAssessment.PNG)
 
 
 <a name="Technology"></a>
 ## Technologies Used
-
+![TechnologiesUsed](https://github.com/Ezzmo/Petclinic/blob/develop/Documentation/TechnologiesUsed.png)
 
 <a name="Environments"></a>
 ## Environments
@@ -105,6 +106,7 @@ User:
 
 <a name="Costs"></a>
 ## Costs
+![Costs](https://github.com/Ezzmo/Petclinic/blob/develop/Documentation/Costs.PNG)
 
 
 <a name="Conclusion"></a>
