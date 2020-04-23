@@ -99,13 +99,13 @@ Ansible was used to provision and configure the dependencies required to test an
 We chose Ansible for this project as it is a very useful automation tool that lets you configure manage and deploy applications, also can configure Windows machines as well as Linux machines, YAML is easy to read and understand and gives you a clear view of what is happening, Ansible is also agentless and doesn’t need any extra configuration and comes with all the features ready to use out the box.
 
 
-***** Setup files can be found in the following dir terraform/ansible *****
+***** Setup files can be found in the following dir -- terraform/ansible *****
 
 - Kubernetes
 
 Our Kubernetes cluster was created using Terraform and this was done in the testing and production environments. Kubernetes helped us deploy our application containers and was used because it is easily able to manage, scale and deploy large applications. It is also very easy to use with Azure and other cloud providers. 
 
-***** Setup files can be found in the following dir terraform/kubernetes-cluster *****
+***** Setup files can be found in the following dir -- terraform/kubernetes-cluster *****
 
 <a name="Testing"></a>
 ## Testing
