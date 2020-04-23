@@ -90,12 +90,18 @@ Terraform was used to create our deployment infrastructure as code, in this case
 
 We chose Terraform as it lets you write infrastructure as code, the infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can be sure that you are using the latest configurations which avoids environment drift.
 
+## Setup files can be found in the Terraform Folder
+
 - Ansible
 
-Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts, this was done so that our app could be deployed seamlessly with Jenkins. We created multiple custom roles inside Ansible to install Docker, Install the applications our app needs to work, configure jenkins and more.
+Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts, this was done so that our app could be deployed seamlessly after Terrafform creates the infrastructure that we need. We created multiple custom roles inside Ansible that; install Docker, Install the applications our app needs to work, configure Jenkins and more.
 
+We chose Ansible for this project as it is a very useful automation tool that lets you configure manage and deploy applications, also can configure Windows machines as well as Linux machines, YAML is easy to read and understand and gives you a clear view of what is happening, Ansible is also agentless and doesn’t need any extra configuration and comes with all the features ready to use out the box.
 
 - Kubernetes
+
+Our Kubernetes cluster was created using Terraform and this was done in the testing and production environments. Kubernetes helped us deploy our application containers and was used because it is easily able to manage, scale and deploy large applications. It is also very easy to use with Azure and other cloud providers. 
+
 
 
 <a name="Testing"></a>
