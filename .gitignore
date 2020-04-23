@@ -7,3 +7,4 @@ terraform/jenkins/terraform.tfstate
 terraform/jenkins/terraform.tfstate.backup
 terraform/cluster-controller/terraform.tfstate
 terraform/cluster-controller/terraform.tfstate.backup
+terraform/cluster-controller/terraform.tfstate.d
