@@ -1,5 +1,4 @@
 pipeline{
-
     agent any
     parameters {
         booleanParam (
@@ -10,6 +9,10 @@ pipeline{
             defaultValue: true,
             description: '',
             name: 'BUILD')
+        booleanParam (
+            defaultValue: true,
+            description: '',
+            name: 'DEPLOY')
     }
     stages{
         
@@ -21,9 +24,9 @@ pipeline{
                 sh label: '', script:
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
+                rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
-                git checkout develop
                 cd spring-petclinic-backend
                 mvn test
                 '''
@@ -37,32 +40,13 @@ pipeline{
                 sh label: '', script:
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
+                rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
-                git checkout develop
                 cd spring-petclinic-frontend
+                ls -al
                 npm install
                 npm test
-                '''
-            }
-        }
-
-        stage('Build backend'){
-            when {
-                expression { params.BUILD == true }
-            }
-            steps{
-                sh label: '', script:
-                '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
-                git clone https://github.com/ezzmo/petclinic
-                cd petclinic
-                git checkout develop
-                cd spring-petclinic-backend
-                ./mvnw spring-boot:run
-                docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
-                docker build -t docktermo/backend .
-                docker push docktermo/backend
                 '''
             }
         }
@@ -77,9 +61,7 @@ pipeline{
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
-                git checkout develop
                 cd spring-petclinic-frontend
-                ./mvnw spring-boot:run 
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
                 docker build -t docktermo/frontend .
                 docker push docktermo/frontend
@@ -87,14 +69,18 @@ pipeline{
             }
         }
         stage('Deploy'){
+            when {
+                expression { params.DEPLOY == true }
+            }
             steps{
                 sh label: '', script:
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
+                rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
-                git checkout develop
                 kubectl apply -f kubernetes_implementation/
+                kubectl get svc
                 '''
             }
         }
