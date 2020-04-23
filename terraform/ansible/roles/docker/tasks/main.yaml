@@ -1,7 +1,9 @@
 - name: Install docker
+  become: true
   shell: curl https://get.docker.com | sh
 
 - name: Install pip
+  become: true
   shell: sudo apt-get install python-pip -y
 
 - name: Change privilege of docker

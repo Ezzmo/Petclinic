@@ -1,6 +1,7 @@
 - name: install nodeJs
   become: true
   shell: sudo apt install nodejs-legacy
+  ignore_errors: True
 
 - name: install angular
   shell: sudo npm install -g @angular/cli@8
@@ -13,3 +14,9 @@
 - name: install Karma
   become: true
   shell: sudo npm install -g karma
+
+- name: install maven (and other packages if needed)
+  become: yes
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  with_items:
+    - maven
