@@ -20,7 +20,7 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git checkout develop
@@ -36,7 +36,7 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git checkout develop
@@ -54,7 +54,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git checkout develop
@@ -74,7 +74,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git checkout develop
@@ -90,7 +90,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git checkout develop
