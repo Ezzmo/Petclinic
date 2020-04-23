@@ -1,2 +1,3 @@
 terraform/cluster-controller/.terraform/
 terraform/jenkins/.terraform/
+terraform/kubernetes-cluster/.terraform/
