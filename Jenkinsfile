@@ -15,7 +15,7 @@ pipeline{
         
         stage('Test backend'){
             when {
-                TEST true
+                expression { params.TEST == true }
             }
             steps {
                 sh label: '', script:
@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Test frontend'){
             when {
-                TEST true
+                expression { params.TEST == true }
             }
             steps {
                 sh label: '', script:
@@ -45,7 +45,7 @@ pipeline{
 
         stage('Build backend'){
             when {
-                BUILD true
+                expression { params.BUILD == true }
             }
             steps{
                 sh label: '', script:
@@ -63,7 +63,7 @@ pipeline{
 
         stage('Build frontend'){
             when {
-                BUILD true
+                expression { params.BUILD == true }
             }
             steps{
                 sh label: '', script:
