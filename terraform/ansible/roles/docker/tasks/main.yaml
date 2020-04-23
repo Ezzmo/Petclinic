@@ -12,7 +12,6 @@
   pip:
     name:
         - docker
-        - docker-compose
 
 - name: enable docker service
   become: true
