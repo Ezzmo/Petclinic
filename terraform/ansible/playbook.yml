@@ -20,14 +20,14 @@
   - name: Installing SSHPASS  
     command: sudo apt-get install sshpass
 
-- name: Setting up Kubernetes controller vm
+- name: Setting up Kubernetes controller vm and installing docker
   hosts: kubecontrol
   become: true
   roles:
     - angular-node-npm
     - docker  
   tasks:
-  - name: Installing Kubectl and Docker and Docker-Compose
+  - name: Installing Kubectl
     command: "{{item}}"
     with_items:
      - sudo az aks install-cli
