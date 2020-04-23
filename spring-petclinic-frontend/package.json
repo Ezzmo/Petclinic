@@ -55,6 +55,6 @@
     "typescript": "3.4.5",
     "karma-phantomjs-launcher":"^1.0.4",
     "phantomjs":"^2.1.7",
-    "phantomjs-prebuild":"^2.1.16"
+    "phantomjs-prebuilt": "^2.1.16"
   }
 }
