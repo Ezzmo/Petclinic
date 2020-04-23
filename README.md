@@ -92,7 +92,7 @@ We chose Terraform as it lets you write infrastructure as code, the infrastructu
 
 - Ansible
 
-Ansible played a key rol
+Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts, this was done so that our app could be deployed seamlessly with Jenkins. We created multiple custom roles inside Ansible to install Docker, Install the applications our app needs to work, configure jenkins and more.
 
 
 - Kubernetes
