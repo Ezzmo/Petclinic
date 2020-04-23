@@ -80,6 +80,7 @@ pipeline{
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 kubectl apply -f kubernetes_implementation/
+                sleep 60s
                 kubectl get svc
                 '''
             }
