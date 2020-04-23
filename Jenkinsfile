@@ -22,7 +22,9 @@ pipeline{
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
-                cd petclinic/spring-petclinic-backend
+                cd petclinic
+                git checkout develop
+                cd spring-petclinic-backend
                 mvn test
                 '''
             }
@@ -36,7 +38,9 @@ pipeline{
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
-                cd petclinic/spring-petclinic-frontend
+                cd petclinic
+                git checkout develop
+                cd spring-petclinic-frontend
                 npm install
                 npm test
                 '''
@@ -52,6 +56,8 @@ pipeline{
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
+                cd petclinic
+                git checkout develop
                 cd spring-petclinic-backend
                 ./mvnw spring-boot:run
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
@@ -70,6 +76,8 @@ pipeline{
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
+                cd petclinic
+                git checkout develop
                 cd spring-petclinic-frontend
                 ./mvnw spring-boot:run 
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
@@ -85,7 +93,8 @@ pipeline{
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
-                kubectl apply -f ./kubernetes_implementation/
+                git checkout develop
+                kubectl apply -f kubernetes_implementation/
                 '''
             }
         }
