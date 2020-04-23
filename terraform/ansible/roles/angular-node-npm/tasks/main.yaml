@@ -3,11 +3,11 @@
   shell: sudo apt install nodejs-legacy
 
 - name: install angular
-  shell: npm install -g @angular/cli@8
+  shell: sudo npm install -g @angular/cli@8
   become: true
 
 - name: install angular local
-  shell: npm install --save-dev @angular-cli
+  shell: sudo npm install --save-dev @angular/cli
   become: true
 
 - name: install Karma
