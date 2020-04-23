@@ -13,9 +13,6 @@ resource "azurerm_resource_group" "k8s" {
     location = var.location
 }
 
-#resource "random_id" "log_analytics_workspace_name_suffix" {
-#    byte_length = 8
-#}
 
 resource "azurerm_log_analytics_workspace" "main" {
     name                = "${var.log_analytics_workspace_name}-k8-analytics01"
@@ -24,7 +21,7 @@ resource "azurerm_log_analytics_workspace" "main" {
     sku                 = var.log_analytics_workspace_sku
 }
 
-resource "azurerm_log_analytics_solution" "test" {
+resource "azurerm_log_analytics_solution" "main" {
     solution_name         = "ContainerInsights"
     location              = azurerm_log_analytics_workspace.main.location
     resource_group_name   = azurerm_resource_group.k8s.name
@@ -65,7 +62,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     addon_profile {
         oms_agent {
         enabled                    = true
-        log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
+        log_analytics_workspace_id = azurerm_log_analytics_workspace.main.id
         }
     }
 

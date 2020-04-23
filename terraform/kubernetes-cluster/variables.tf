@@ -2,7 +2,7 @@ variable "client_id" {}
 variable "client_secret" {}
 
 variable "agent_count" {
-    default = 3
+    default = 1
 }
 
 variable "ssh_public_key" {
@@ -29,7 +29,6 @@ variable log_analytics_workspace_name {
     default = "Petclinic-LogAnalyticsWorkspace"
 }
 
-# refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
 variable log_analytics_workspace_location {
     default = "east us"
 }
