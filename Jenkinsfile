@@ -20,7 +20,7 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic/spring-petclinic-backend
                 mvn test
@@ -34,7 +34,7 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic/spring-petclinic-frontend
                 npm install
@@ -50,7 +50,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd spring-petclinic-backend
                 ./mvnw spring-boot:run
@@ -68,7 +68,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd spring-petclinic-frontend
                 ./mvnw spring-boot:run 
@@ -82,7 +82,7 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -o StrictHostKeyChecking=no ${kube-controller}<<eof
+                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube-controller}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 kubectl apply -f ./kubernetes_implementation/
