@@ -38,7 +38,7 @@ pipeline{
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic/spring-petclinic-frontend
                 npm install
-                ng test --browsers PhantomJS
+                npm test
                 '''
             }
         }
