@@ -94,6 +94,14 @@ User:
 
 <a name="Environments"></a>
 ## Environments
+In this project we used multiple environments and tools to test build and deploy the applications, the tools are listed below:
+
+- Terraform
+
+Terraform was used in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging.
+
+- Ansible
+- Kubernetes
 
 
 <a name="Testing"></a>
