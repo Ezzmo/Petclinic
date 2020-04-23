@@ -8,7 +8,8 @@
 * [Use Cases](#UserCases)
 * [Risk Analysis](#Risk) 
 * [Technologies Used](#Technology) 
-* [Testing Environment ](#Testing)
+* [Environments ](#Environments)
+* [Testing](#Testing)
 * [Deployment](#Deployment)
 * [Costs](#Costs) 
 * [Project Conclusion](#Conclusion) 
@@ -92,6 +93,11 @@ User:
 
 <a name="Environments"></a>
 ## Environments
+
+
+<a name="Testing"></a>
+## Testing
+
 
 <a name="Deployment"></a>
 ## Deployment
