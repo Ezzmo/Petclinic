@@ -45,6 +45,8 @@ As this is a group project composed of 4 members, there will need to be adequate
 
 Therefore, throughout the duration of this project we chose to employ **Scrum** as our project management framework. Unlike conventional methods of project planning, Scrum promotes and encourages teams to learn through experiences, self-organise and share ideas whilst working towards resolving a problem.
 
+![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Scrum%20Sprints.PNG)
+
 This short video further explains the benifits of using **SCRUM**
 [![Scrum Link](https://github.com/zReginaldo/MySQLdb/blob/master/Document/youtube-logo-png-46031.png)](https://www.youtube.com/watch?v=2Vt7Ik8Ublw) 
 
@@ -67,21 +69,7 @@ https://github.com/code-wizard91
 
 <a name="UserCases"></a>
 ## User Cases
-Developer:
-
-•	I need the tests to be automatically begin once I push my changes to a repo and be able to monitor the results/progress.
-
-•	Successful updates need to be deployed to production with little to no downtime.
-
-
-Engineer:
-
-•	As an engineer, I need to be able to monitor the pipeline, regarding costs, networks and health of deployment.
-
-
-User:
-
-•	I need access to the web-app and trust that any information stored is secure.
+![UserCases](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/UserStories.PNG)
 
 <a name="Risk"></a>
 ## Risk Analysis
@@ -106,7 +94,7 @@ Terraform was used in this case to create two environements; Staging and Product
 
 <a name="Testing"></a>
 ## Testing
-
+![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
 <a name="Deployment"></a>
 ## Deployment
