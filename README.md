@@ -100,6 +100,7 @@ Ansible was used to provision and configure the dependencies required to test an
 
 <a name="Testing"></a>
 ## Testing
+* Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
 <a name="Deployment"></a>
@@ -113,8 +114,8 @@ Ansible was used to provision and configure the dependencies required to test an
 
 <a name="Conclusion"></a>
 ## Project Conclusion
-
+* We are happy with what we managed to accomplish in such a short time, even at the beginning it was quite difficult to understand the application, considering that the backend use Java and the frontend use AngularJS, which we weren’t familiar with. We faced problems, like not being able to link the backend and the frontend while applying Kubernetes or having issues while testing the application, but we supported each other as a team, we didn’t give up until we managed to do everything we planned and we also had Jay pointing us to the right direction.
 
 <a name="FutureWork"></a>
 ## Future Work
-
+* What we could do more is having a more specified cost analysis, or even adding graphics to the final presentation. 
