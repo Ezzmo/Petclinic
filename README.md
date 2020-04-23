@@ -98,7 +98,7 @@ In this project we used multiple environments and tools to test build and deploy
 
 - Terraform
 
-Terraform was used in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging.
+Terraform was used in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging. The environments have 1 Kubernetes Cluster and all it dependencies, 1 VM for controlling the clusters using Kubectl and testing the app and finally a Jenkins CI/CD server which executes the pipeline.
 
 - Ansible
 - Kubernetes
