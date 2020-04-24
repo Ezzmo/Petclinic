@@ -31,13 +31,6 @@ The deployment of this project would require automated building and re-deploymen
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
-A unix-machine with Terraform and Ansible installed along with subscription to a cloud provider. In this case the cloud provider used is Azure, but this can be configured with any.
-
-### Terraform
-Terraform needs to be configured with a provider to manage resources. In this case a service principal is set up, allowing Terraform to connect to our Azure subscription with a clientID and clientSecret.
-
-### Ansible
-A Unix based system is required in order to run ansible (we used Ubuntu 18.04 LTS), and configure the virtual machines created by Terraform.
 
 <a name="planning"></a>
 ## Planning
@@ -138,8 +131,9 @@ After this was done we were able to get the results of the tests printed in the 
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
 ### Backend Testing
+Tesing the backend was relativly simple, all that was required was to install **Maven** and run the simple command ```mvn test``` this would go through all of the test files and output weather or not the tests had passed or failed. 
 
-* Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
+![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing_Backend.PNG)
 
 
 <a name="pipeline"></a>
