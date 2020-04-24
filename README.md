@@ -45,8 +45,6 @@ As this is a group project composed of 4 members, there will need to be adequate
 
 Therefore, throughout the duration of this project we chose to employ **Scrum** as our project management framework. Unlike conventional methods of project planning, Scrum promotes and encourages teams to learn through experiences, self-organise and share ideas whilst working towards resolving a problem.
 
-![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Scrum%20Sprints.PNG)
-
 This short video further explains the benifits of using **SCRUM**
 [![Scrum Link](https://github.com/zReginaldo/MySQLdb/blob/master/Document/youtube-logo-png-46031.png)](https://www.youtube.com/watch?v=2Vt7Ik8Ublw) 
 
@@ -65,7 +63,13 @@ https://github.com/code-wizard91
 ### Scrum Master 
  https://github.com/zReginaldo
 
+Below shows the inital Scrum plan for this project, this was agreed apon by each group member and includes the start and finish dates of each of sprint. 
 
+![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Scrum%20Sprints.PNG)
+
+Throughout the course of the project we also had daily standups where we would inform eachother what we had done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint. 
+
+![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Trello-Like-Planning.PNG)
 
 <a name="UserCases"></a>
 ## User Cases
@@ -90,7 +94,7 @@ Terraform was used to create our deployment infrastructure as code, in this case
 
 We chose Terraform as it lets you write infrastructure as code, the infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can be sure that you are using the latest configurations which avoids environment drift.
 
-***** Setup files can be found in the Terraform Folder *****
+ ***** Setup files can be found in the Terraform Folder *****
 
 - Ansible
 
