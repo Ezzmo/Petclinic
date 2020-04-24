@@ -31,6 +31,13 @@ The deployment of this project would require automated building and re-deploymen
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
+A unix-machine with Terraform and Ansible installed along with subscription to a cloud provider. In this case the cloud provider used is Azure, but this can be configured with any.
+
+### Terraform
+Terraform needs to be configured with a provider to manage resources. In this case a service principal is set up, allowing Terraform to connect to our Azure subscription with a clientID and clientSecret.
+
+### Ansible
+A Unix based system is required in order to run ansible (we used Ubuntu 18.04 LTS), and configure the virtual machines created by Terraform.
 
 <a name="planning"></a>
 ## Planning
