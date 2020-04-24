@@ -6,7 +6,7 @@ pipeline{
             description: '',
             name: 'TEST')
         booleanParam (
-            defaultValue: false,
+            defaultValue: true,
             description: '',
             name: 'BUILD')
         booleanParam (
@@ -53,7 +53,7 @@ pipeline{
 
         stage('Build frontend'){
             when {
-                expression { params.BUILD == true }
+                expression { params.BUILD == false }
             }
             steps{
                 sh label: '', script:
