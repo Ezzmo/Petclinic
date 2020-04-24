@@ -76,7 +76,6 @@ pipeline{
                 sh label: '', script:
                 '''
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
-                rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 kubectl apply -f kubernetes_implementation/
