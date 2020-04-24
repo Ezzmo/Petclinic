@@ -1,8 +1,7 @@
 # QACFinalProject
 
 ## Contents 
-* [Introduction](#Introduction) 
-* [Deployment Pipeline](#pipeline) 
+* [Introduction](#Introduction)  
 * [Deployment Pretequisites](#prerequisites)
 * [Planning](#planning)
 * [Use Cases](#UserCases)
@@ -10,6 +9,7 @@
 * [Technologies Used](#Technology) 
 * [Environments ](#Environments)
 * [Testing](#Testing)
+* [Deployment Pipeline](#pipeline)
 * [Deployment](#Deployment)
 * [Costs](#Costs) 
 * [Project Conclusion](#Conclusion) 
@@ -30,10 +30,6 @@ The general outline of this project was to use all the concepts from previous tr
 As a group of 4 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
 The deployment of this project would require automated building and re-deployment to testing and live environments upon any GitHub changes, whilst also keeping track of running costs.   
-
-<a name="pipeline"></a>
-## Deployment Pipeline
-![s5](/Documentation/Pipeline.jpg)
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
@@ -115,6 +111,10 @@ Our Kubernetes cluster was created using Terraform and this was done in the test
 ## Testing
 * Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
+
+<a name="pipeline"></a>
+## Deployment Pipeline
+![s5](/Documentation/Pipeline.jpg)
 
 <a name="Deployment"></a>
 ## Deployment
