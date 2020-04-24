@@ -126,7 +126,7 @@ Coverage In Terminal >>> coverageReporter:{ type:'text'},
 reporters : ['progress', 'kjhtml'] >>> ['progress', 'kjhtml','coverage']
 
 ```
-After this was done we were able to get the results of the tests printed in the terminal as well as the coverage report for all of the tests that were conducted. When wanting to conduct the tests in Jenkins you will also need to change the **Karma.conf.js** file so that the terminal dosent hang by changing ```singleRun: false >>> true```  [Test Coverage In terminal (https://github.com/Ezzmo/Petclinic/blob/master/Documentation/TerminalTesting.PNG)
+After this was done we were able to get the results of the tests printed in the terminal as well as the coverage report for all of the tests that were conducted. When wanting to conduct the tests in Jenkins you will also need to change the **Karma.conf.js** file so that the terminal dosent hang by changing ```singleRun: false >>> true```  [Test Coverage In Terminal](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/TerminalTesting.PNG)
 
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
