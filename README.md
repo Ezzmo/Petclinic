@@ -25,8 +25,6 @@ The general outline of this project was to use all the concepts from previous tr
  
  **API using Java** https://github.com/spring-petclinic/spring-petclinic-rest
  
-
- 
 As a group of 4 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
 The deployment of this project would require automated building and re-deployment to testing and live environments upon any GitHub changes, whilst also keeping track of running costs.   
@@ -63,7 +61,7 @@ Below shows the inital Scrum plan for this project, this was agreed apon by each
 
 ![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Scrum%20Sprints.PNG)
 
-Throughout the course of the project we also had daily standups where we would inform eachother what we had done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint as well as assigining the task to invdividuals.
+Throughout the course of the project we also had daily standups where we would inform eachother what we had been done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint as well as assigining the task to invdividuals.
 
 ![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Trello-Like-Planning.PNG)
 
@@ -109,6 +107,22 @@ Our Kubernetes cluster was created using Terraform and this was done in the test
 
 <a name="Testing"></a>
 ## Testing
+
+Testing was conducted using a combination of **Karama, Jasmine, Angular, NodeJs and Maven** the testing files and location had already been configured for the application so our only responsibility was to initate the tests. Testing was a tedius process for us during this project as we had not dealt with any of the technology before, however this just meant we had to allocate additional time to learning and understanding this new technology. 
+
+###Frontend Testing
+Testing was conducted simply by using the command ```ng test``` this would run the tests that were pre defined and show us how many had passed or failed. However tests were displayed using the browser **CHROME**, requring us to open a new weeb page and run a dubg in order to recieve the full list of tests. In order for tests to be applicable for Jenkins we had to slighlt tweak the configuration files. 
+
+**Changes Made**
+```
+Install > npm install phantomjs
+
+plugins > require('karma-phantomjs-launcher')
+
+browsers: ['Chrome'] > ['PhantomJS']
+```
+
+
 * Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
