@@ -67,7 +67,7 @@ Below shows the inital Scrum plan for this project, this was agreed apon by each
 
 ![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Scrum%20Sprints.PNG)
 
-Throughout the course of the project we also had daily standups where we would inform eachother what we had done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint. 
+Throughout the course of the project we also had daily standups where we would inform eachother what we had done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint as well as assigining the task to invdividuals.
 
 ![Planning](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Trello-Like-Planning.PNG)
 
