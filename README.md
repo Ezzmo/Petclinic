@@ -130,9 +130,10 @@ After this was done we were able to get the results of the tests printed in the 
 
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
 
+### Backend Testing
 
 * Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
-![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
+
 
 <a name="pipeline"></a>
 ## Deployment Pipeline
