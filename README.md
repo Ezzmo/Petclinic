@@ -110,18 +110,23 @@ Our Kubernetes cluster was created using Terraform and this was done in the test
 
 Testing was conducted using a combination of **Karama, Jasmine, Angular, NodeJs and Maven** the testing files and location had already been configured for the application so our only responsibility was to initate the tests. Testing was a tedius process for us during this project as we had not dealt with any of the technology before, however this just meant we had to allocate additional time to learning and understanding this new technology. 
 
-###Frontend Testing
-Testing was conducted simply by using the command ```ng test``` this would run the tests that were pre defined and show us how many had passed or failed. However tests were displayed using the browser **CHROME**, requring us to open a new weeb page and run a dubg in order to recieve the full list of tests. In order for tests to be applicable for Jenkins we had to slighlt tweak the configuration files. 
+### Frontend Testing
+Testing was conducted simply by using the command ```ng test``` this would run the tests that were pre defined and show us how many had passed or failed. However tests were displayed using the browser **CHROME**, requring us to open a new weeb page and run a dubg to recieve the full list of tests. In order for tests to be applicable for Jenkins we had to slighlt tweak the configuration files. 
 
 **Changes Made**
 ```
-Install > npm install phantomjs
+Install >>> npm install phantomjs
 
-plugins > require('karma-phantomjs-launcher')
+plugins >>> require('karma-phantomjs-launcher'), require('karma-coverage')
 
-browsers: ['Chrome'] > ['PhantomJS']
+browsers: ['Chrome'] >>> ['PhantomJS']
+
+Coverage In Terminal >>> coverageReporter:{ type:'text'}, 
+
+reporters : ['progress', 'kjhtml'] >>> ['progress', 'kjhtml','coverage']
+
 ```
-
+After this was done we were able to get the results of the tests printed in the terminal as well as the coverage report for all of the tests that were conducted. When wanting to conduct the tests in Jenkins you will also need to change the **Karma.conf.js** file so that the terminal dosent hang by changing ```singleRun: false >>> true```
 
 * Testing process was a quite difficult. Even the tests were already done by the developers, the documentation of the repositories wasn’t enough for what we wanted to get, the coverage report. We needed to do extra research about testing using Maven for the backend and Node JavaScript for the frontend, but once we learn how to do it the tests executed as required.  
 ![Testing](https://github.com/Ezzmo/Petclinic/blob/master/Documentation/Testing.PNG)
