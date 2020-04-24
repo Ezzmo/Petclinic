@@ -53,7 +53,7 @@ pipeline{
 
         stage('Build frontend'){
             when {
-                expression { params.BUILD == false }
+                expression { params.BUILD == true }
             }
             steps{
                 sh label: '', script:
