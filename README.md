@@ -154,7 +154,7 @@ We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) aft
 
 <a name="Conclusion"></a>
 ## Project Conclusion
-* We are happy with what we managed to accomplish in such a short time, even at the beginning it was quite difficult to understand the application, considering that the backend use Java and the frontend use AngularJS, which we weren’t familiar with. We faced problems, like not being able to link the backend and the frontend while applying Kubernetes or having issues while testing the application, but we supported each other as a team, we didn’t give up until we managed to do everything we planned and we also had Jay pointing us to the right direction.
+* We are happy with what we managed to accomplish in such a short time, even at the beginning it was quite difficult to understand the application, considering that the backend used Java and the frontend used AngularJS, which we weren’t familiar with. We faced problems, like not being able to link the backend and the frontend while applying Kubernetes or having issues while testing the application, but we supported each other as a team, we didn’t give up until we managed to do everything we planned and we also had Jay pointing us to the right direction.
 
 <a name="FutureWork"></a>
 ## Future Work
