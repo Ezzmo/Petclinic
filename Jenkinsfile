@@ -6,7 +6,7 @@ pipeline{
             description: '',
             name: 'TEST')
         booleanParam (
-            defaultValue: false,
+            defaultValue: true,
             description: '',
             name: 'BUILD')
         booleanParam (
@@ -80,7 +80,7 @@ pipeline{
                 cd petclinic
                 git pull
                 kubectl apply -f kubernetes_implementation/
-                sleep 60s
+                sleep 10s
                 kubectl get svc
                 '''
             }
