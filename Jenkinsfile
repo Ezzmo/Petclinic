@@ -65,7 +65,7 @@ pipeline{
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
                 docker build -t docktermo/frontend .
                 docker push docktermo/frontend
-                '''
+                ''' 
             }
         }
         stage('Deploy'){
