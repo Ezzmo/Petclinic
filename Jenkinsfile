@@ -6,7 +6,7 @@ pipeline{
             description: '',
             name: 'TEST')
         booleanParam (
-            defaultValue: true,
+            defaultValue: false,
             description: '',
             name: 'BUILD')
         booleanParam (
