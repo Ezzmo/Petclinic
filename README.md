@@ -31,6 +31,13 @@ The deployment of this project would require automated building and re-deploymen
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
+A unix-machine with Terraform and Ansible installed along with subscription to a cloud provider. In this case the cloud provider used is Azure, but this can be configured with any.
+
+### Terraform
+Terraform needs to be configured with a provider to manage resources. In this case a service principal is set up, allowing Terraform to connect to our Azure subscription with a clientID and clientSecret.
+
+### Ansible
+A Unix based system is required in order to run ansible (we used Ubuntu 18.04 LTS), and configure the virtual machines created by Terraform.
 
 <a name="planning"></a>
 ## Planning
@@ -154,7 +161,7 @@ We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) aft
 
 <a name="Conclusion"></a>
 ## Project Conclusion
-* We are happy with what we managed to accomplish in such a short time, even at the beginning it was quite difficult to understand the application, considering that the backend used Java and the frontend used AngularJS, which we weren’t familiar with. We faced problems, like not being able to link the backend and the frontend while applying Kubernetes or having issues while testing the application, but we supported each other as a team, we didn’t give up until we managed to do everything we planned and we also had Jay pointing us to the right direction.
+* We are happy with what we managed to accomplish in such a short time, even at the beginning it was quite difficult to understand the application, considering that the backend use Java and the frontend use AngularJS, which we weren’t familiar with. We faced problems, like not being able to link the backend and the frontend while applying Kubernetes or having issues while testing the application, but we supported each other as a team, we didn’t give up until we managed to do everything we planned and we also had Jay pointing us to the right direction.
 
 <a name="FutureWork"></a>
 ## Future Work
