@@ -78,6 +78,7 @@ pipeline{
                 sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
+                git pull
                 kubectl apply -f kubernetes_implementation/
                 sleep 60s
                 kubectl get svc
