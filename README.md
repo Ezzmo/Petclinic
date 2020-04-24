@@ -150,6 +150,7 @@ We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) aft
 
 <a name="Costs"></a>
 ## Costs
+We used Pricing Calculator to configure and estimate the monthly running costs for the Azure products that we need to automate the deployment of the application. We decided that we need 2 VMs and the Azure Kubernetes Service, we used East US as region because that’s what we found available according to the subscription that we were using and we came to the conclusion that we would have an operational expenditure of £160.17, paying only for what we are using with no upfront costs for the services.
 ![Costs](https://github.com/Ezzmo/Petclinic/blob/develop/Documentation/Costs.PNG)
 
 
