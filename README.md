@@ -152,7 +152,7 @@ Tesing the backend was relativly simple, all that was required was to install **
 
 We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) after this process we used Ansible to go into the VM's we  created and install all the applications we would need for the project to work e.g Jenkins, Java, Python, Docker, Maven. After running Ansible we then trigger the build process which is running on our Jenkins CI/CD server, this tests the application and if the tests pass the deployment stage is triggered and the application is deployed to the Kubernetes Cluster on Azure. See video Below for more info.
 
-[![pipeline_video](/Documentation/video.jpg)](https://youtu.be/NbPw3a7791U)
+[![pipeline_video](/Documentation/video.jpg)](https://youtu.be/jcAL9zQ6r8Q)
 
 
 <a name="Costs"></a>
