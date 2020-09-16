@@ -51,6 +51,7 @@ pipeline{
                 sh label: '', script:
                 '''
                 cd spring-petclinic-frontend
+                echo $(whoami)
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
                 docker build -t docktermo/frontend .
                 docker push docktermo/frontend
