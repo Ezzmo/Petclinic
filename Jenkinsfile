@@ -38,8 +38,6 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                rm -rf petclinic
-                git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 cd spring-petclinic-frontend
                 ls -al
@@ -56,7 +54,6 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 cd spring-petclinic-frontend
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
@@ -72,7 +69,6 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git pull
                 kubectl apply -f kubernetes_implementation/
