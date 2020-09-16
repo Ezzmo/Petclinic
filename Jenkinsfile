@@ -23,7 +23,6 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
@@ -39,7 +38,6 @@ pipeline{
             steps {
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 rm -rf petclinic
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
@@ -58,7 +56,6 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 cd spring-petclinic-frontend
@@ -75,7 +72,6 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                sshpass -p ${vmpass} ssh -T -o StrictHostKeyChecking=no ${kube}<<eof
                 git clone https://github.com/ezzmo/petclinic
                 cd petclinic
                 git pull
