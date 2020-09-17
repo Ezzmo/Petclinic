@@ -65,7 +65,6 @@ pipeline{
             steps{
                 sh label: '', script:
                 '''
-                git pull
                 kubectl apply -f kubernetes_implementation/
                 sleep 10s
                 kubectl get svc
